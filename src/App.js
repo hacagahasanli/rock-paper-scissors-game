@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Users from "./components/Users/Users";
+import Home from "./components/Home/Home";
+import "./App.css";
 
 function App() {
+  const [isValid, setIsValid] = useState(false);
+  const [userInput, setUserInput] = useState("");
+
+  // useEffect(() => {
+  //   let settedLocalKey = localStorage.getItem("localKey");
+
+  //   if (settedLocalKey === "1") {
+  //     setIsValid(true);
+  //     console.log("bura daxil oldu")
+  //   }
+  // }, []);
+
+  const getValue = (userEnteredValue) => {
+    setUserInput(userEnteredValue);
+    setIsValid(true);
+    //localStorage.setItem("localKey", "1");
+  };
+
+  const onReset = () => {
+    //localStorage.removeItem("localKey");
+    setIsValid(false);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!isValid && <Users onTakeValue={getValue} />}
+      {isValid && <Home onReset={onReset} onUserValue={userInput} />}
     </div>
   );
 }

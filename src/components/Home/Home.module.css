@@ -1,0 +1,47 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(2,220px);
+    grid-gap: 10rem;
+    position: relative;
+    align-items: center;
+    justify-content:center;
+    max-width: 740px;
+    top: 8rem;
+    height: 250px;
+    border: none;
+    border: 2px solid rgb(211, 209, 209);
+    box-shadow: 2px 2px 4px 0px rgb(202, 200, 200);  
+    margin: 0 auto; 
+}
+
+.container .imgContainer img{
+    height:15.5rem;
+    width: 14rem;
+    font-size:1rem;
+    color: white;
+    background:none;
+    border: none;
+    cursor:not-allowed;
+}
+
+.header{
+    position: relative;
+    top: 5rem;
+}
+.btn{
+    position: relative;
+    top: 10rem;
+    padding: 0.8rem 2.3rem;
+    outline:none;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border: 1px solid rgb(228, 225, 225);
+    border-radius:4px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color:rgb(34, 34, 34);
+    color: orange;
+}
